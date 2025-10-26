@@ -39,10 +39,11 @@ const server = createServer((req, res) => {
         
         // savedDodgeyUrls.push(dodgeyUrl);
         // items.push();
-        
-        res.writeHead(301, {
-          Location: savedUrls[id]
-        }).end();
+        if (id && savedUrls[id]) {
+          res.writeHead(301, {
+            Location: savedUrls[id]
+          }).end();
+        }
         // res.end(JSON.stringify({ message: "Item added", item: savedUrls[id] }));
 
       } else if (url.startsWith("/") && method === "POST") {
