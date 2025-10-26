@@ -1,18 +1,16 @@
 const { dodgyUrlWords } = require("./data.js");
 
 const createDodgeyString = () => {
-  const urlLength = 3;
+  const urlLength = 6;
   const urlSections = [];
   for (let i = 0; i < urlLength; i++) {
     urlSections.push(
       dodgyUrlWords[Math.floor(Math.random() * dodgyUrlWords.length)]
     );
   }
-  urlSections.join("-");
-  return {
-    dodgeyUrl: urlSections,
-  };
+  return urlSections.join("-");
 };
+
 // take a url as an argument
 // generate a new dodgey looking url
 // when the dodgey url is visited, it looks up to see if there's a normal url to redirect to
