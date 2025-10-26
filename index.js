@@ -1,7 +1,7 @@
 const { createServer } = require("node:http");
 const { createDodgeyString } = require("./urlLogic");
 
-const hostname = "localhost";
+const hostname = process.env.HOSTNAME || "localhost";
 const port = process.env.PORT || 3939;
 
 let items = []; // simple in memory array to store data
